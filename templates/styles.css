@@ -1,0 +1,46 @@
+h1 {
+    text-align: center;
+    font-family: monospace;
+}
+form {
+    background-color: #eee;
+    padding: 20px;
+    margin: 0 auto;
+    width: 540px;
+    font: 16px sans-serif;
+    border-radius: 10px;
+}
+textarea {
+    margin: 10px 0;
+    width: 540px;
+    height: 120px;
+}
+.error {
+    color: red;
+}
+.choice {
+    margin: none;
+    text-align: center;
+    padding: 10px;
+}
+.choice li {
+    margin: 15px;
+    padding: 15px;
+    display: inline;
+    font-family: monospace;
+    font-size: 1.5em;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+.choice a {
+    text-decoration: none;
+}
+footer {
+    font-family: sans-serif;
+    text-align: center;
+    position:fixed;
+    width:100%;
+    background-color:#eee;
+    padding:5px;
+    bottom:0px;
+}
