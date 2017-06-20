@@ -1,18 +1,22 @@
 {% extends 'body_form.html' %}
 
 {% block content %}
-<form method='POST'>
+<form action="/signup" method='POST'>
     <label for='username'>User Name:</label>
     <input type='text' name='username' id='username' value='{{username}}'/>
+    <p class="error">{{username_error}}</p>
     <br />
     <label for='password'>Password:</label>
-    <input type='text' name='password' id='password' />
+    <input type='password' name='password' id='password' />
+    <p class="error">{{password_error}}</p>
     <br />
     <label for='password_verify'>Verify Password:</label>
-    <input type='text' name='password_verify' id='password_verify' />
+    <input type='password' name='password_verify' id='password_verify' />
+    <p class="error">{{password_verify_error}}</p>
     <br />
     <label for='user_email'>Email (optional):</label>
     <input type='text' name='user_email' id='user_email' />
+    <p class="error">{{user_email_error}}</p>
     <input type="submit" value="Sign Up!">
 </form>
 {% endblock %}
