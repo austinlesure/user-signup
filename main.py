@@ -41,14 +41,15 @@ def signup():
     if check_email(user_email) == False:
         user_email_error = 'Not a valid email address.'
     if username_error or password_error or password_verify_error or user_email_error:
-        return template.render(title = 'User Signup',username = username, username_error = username_error, password_error = password_error, password_verify_error = password_verify_error, user_email_error = user_email_error)
+        return template.render(title = 'User Signup', username = username, user_email = user_email, username_error = username_error, password_error = password_error, password_verify_error = password_verify_error, user_email_error = user_email_error)
     else:
         return redirect('/greeting?username=' + good_username)
 
 @app.route('/greeting')
 def greeting():
+    template = jinja_env.get_template('greeting.html')
     username = request.args.get('username')
-    return '<h1>Hello, ' + username + '!</h1>'
+    return template.render(title = 'Hello, ' + username + '!', username = username)
 
 def check_valid(password):
     for char in password:
@@ -64,6 +65,8 @@ def check_valid(password):
 def check_email(user_email):
     if user_email == '':
         return True
+    if len(user_email) > 20 or len(user_email) < 3:
+        return False
     at_count = 0
     dot_count = 0
     for char in user_email:
@@ -76,7 +79,7 @@ def check_email(user_email):
                 dot_count += 1
             else:
                 return False
-    if dot_count > 2 or dot_count < 1:
+    if dot_count != 1:
         return False
     elif at_count != 1:
         return False

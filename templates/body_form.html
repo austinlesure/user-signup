@@ -11,34 +11,22 @@
             background-color: #eee;
             padding: 20px;
             margin: 0 auto;
-            width: 540px;
+            width: 480px;
             font: 16px sans-serif;
             border-radius: 10px;
         }
-        textarea {
-            margin: 10px 0;
+        .greeting {
+            background-color: #eee;
+            padding: 20px;
+            margin: 0 auto;
             width: 540px;
-            height: 120px;
+            font: 16px sans-serif;
+            border-radius: 10px;
+            text-align: center;
         }
         .error {
+            margin-left: 15px;
             color: red;
-        }
-        .choice {
-            margin: none;
-            text-align: center;
-            padding: 10px;
-        }
-        .choice li {
-            margin: 15px;
-            padding: 15px;
-            display: inline;
-            font-family: monospace;
-            font-size: 1.5em;
-            background-color: #ccc;
-            border-radius: 10px;
-        }
-        .choice a {
-            text-decoration: none;
         }
         footer {
             font-family: sans-serif;
@@ -49,6 +37,13 @@
             padding:5px;
             bottom:0px;
         }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input.submit {
+            margin-top: 15px;
+        }
     </style>
     </head>
     <body>
@@ -58,10 +53,10 @@
         <main>
             {% block content %}
             {% endblock %}
-            <p class="error">{{error_msg}}</p>
+            <!--<p class="error">{{error_msg}}</p>-->
         </main>
-        <footer>
+        <!--<footer>
             <p>&copy;2017 Austin J. O. LeSure</p>
-        </footer>
+        </footer>-->
     </body>
 </html>
