@@ -84,5 +84,6 @@ def check_email(user_email):
     elif at_count != 1:
         return False
     return True
-
-app.run()
+    
+if __name__ == '__main__':
+    app.run()
